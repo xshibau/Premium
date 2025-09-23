@@ -1,3 +1,37 @@
+local PremiumKeys = {  
+"AURA-ES2SW-RF2CA-ACL-YV7LS-KURYP",
+"AURA-9HJR8-DQL05-WHV-1RMBW-ZRUQ9",
+"AURA-VX2TE-B23YG-1CD-KMQJO-8HRF8",
+"AURA-WU2WS-AYINW-6LD-I25X0-GZA6K",
+"AURA-NGEXS-PHKMK-0QL-EUV0K-LVVVI",
+}  
+  
+local BlacklistKeys = {  
+    ["abc123"] = "Hành vi gian lận bị phát hiện",  
+    ["badkey456"] = "Vi phạm điều khoản sử dụng",  
+    ["xyz789"] = "Key đã bị thu hồi do lạm dụng"  
+}  
+  
+local function isPremiumKey(key)  
+    for _, v in ipairs(PremiumKeys) do  
+        if v == key then  
+            return true  
+        end  
+    end  
+    return false  
+end  
+  
+local function getBlacklistReason(key)  
+    return BlacklistKeys[key]  
+end  
+  
+if not script_key or getBlacklistReason(script_key) then  
+    local reason = getBlacklistReason(script_key) or "Key bị chặn"  
+    game:GetService("Players").LocalPlayer:Kick(reason)  
+    return  
+end  
+  
+if isPremiumKey(script_key) then  
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local PlayerGui = Player:WaitForChild("PlayerGui")
@@ -152,3 +186,6 @@ task.delay(20, function()
     TeleportService:Teleport(PLACE_ID, player)
 end)
 end)
+else  
+    game:GetService("Players").LocalPlayer:Kick("Invalid Key")  
+end

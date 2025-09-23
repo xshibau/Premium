@@ -1,9 +1,9 @@
 local PremiumKeys = {  
-"AURA-ES2SW-RF2CA-ACL-YV7LS-KURYP",
-"AURA-9HJR8-DQL05-WHV-1RMBW-ZRUQ9",
-"AURA-VX2TE-B23YG-1CD-KMQJO-8HRF8",
-"AURA-WU2WS-AYINW-6LD-I25X0-GZA6K",
-"AURA-NGEXS-PHKMK-0QL-EUV0K-LVVVI",
+"s8k5monqrtokj0pp128e4fqveh4no6en",
+"45538icd6539js07vry79c65u0rsm8b1",
+"cckhe3tlavwiua99zli5v3mkximuxsma",
+"e1e2yrootanbgo54z6hweqd80fxtsbj3",
+"5f2szjty6fgt658232t0ixth2nwuw30i",
 }  
   
 local BlacklistKeys = {  
